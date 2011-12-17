@@ -4,6 +4,7 @@ package entities
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import net.flashpunk.Graphic;
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
 	import net.flashpunk.masks.Grid;
 	import worlds.StageWorld;
@@ -146,6 +147,7 @@ package entities
 		protected var _v:Point;
 		protected var _s:Point;
 		protected var _collision:Entity;
+		protected var _image:Image;
 		
 		/** Horizontal acceleration of input. */
 		protected var _ah:Number = C.A_HORIZONTAL;

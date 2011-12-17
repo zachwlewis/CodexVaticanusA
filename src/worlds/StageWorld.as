@@ -2,6 +2,7 @@ package worlds
 {
 	import entities.Actor;
 	import entities.InputActor;
+	import entities.JumpMan;
 	import flash.display.BitmapData;
 	import flash.geom.Point;
 	import levels.Level;
@@ -19,6 +20,7 @@ package worlds
 	{
 		public function get CollisionGrid():Entity { return _grid; }
 		
+		
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
@@ -35,18 +37,20 @@ package worlds
 			
 			var im:Image = new Image(Assets.GFX_ASSHOLE);
 			var playerStart:Point;
-			//* Small Guy
+			/* Small Guy
 			playerStart = _level.getEntities("player")[0];
 			var p1:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_ASSHOLE), new Hitbox(12, 14, 0, 0));
 			p1.graphic.y = -2;
+			add(p1);
 			//*/
-			//* Big Guy
+			/* Big Guy
 			playerStart = _level.getEntities("strongman")[0];
 			var p2:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_STR_ASSHOLE), new Hitbox(32, 30, 0, 0));
 			p2.graphic.y = -2;
-			//*/
-			add(p1);
 			add(p2);
+			//*/
+			
+			if (_level.getEntities("jumpman")[0] != null) { _player = JumpMan(add(new JumpMan(_level.getEntities("jumpman")[0].x, _level.getEntities("jumpman")[0].y)))};
 			add(_grid);
 			
 			super.begin();
@@ -54,6 +58,7 @@ package worlds
 		
 		protected var _grid:Entity;
 		protected var _level:Level;
+		protected var _player:InputActor;
 		
 	}
 

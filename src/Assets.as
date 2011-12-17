@@ -17,6 +17,9 @@ package
 		
 		[Embed(source = '../gfx/editor/strong-man.png')]
 		public static const GFX_STR_ASSHOLE:Class;
+		
+		[Embed(source = '../gfx/editor/jumpman.png')]
+		public static const GFX_JMP_ASSHOLE:Class;
 	}
 
 }

@@ -2,6 +2,7 @@
   <entities>
     <player x="512" y="304" />
     <strongman x="80" y="320" />
+    <jumpman x="320" y="320" />
   </entities>
   <tiles tileset="zeta" exportMode="XML">
     <tile x="7" y="17" id="0" />
