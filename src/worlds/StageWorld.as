@@ -1,6 +1,7 @@
 package worlds 
 {
 	import entities.Actor;
+	import entities.InputActor;
 	import flash.display.BitmapData;
 	import flash.geom.Point;
 	import levels.Level;
@@ -30,9 +31,13 @@ package worlds
 		{
 			
 			
-			
+			var im:Image = new Image(Assets.GFX_ASSHOLE);
 			var playerStart:Point = _level.getEntities("player")[0];
-			var p:Actor = new Actor(playerStart.x, playerStart.y, new Image(new BitmapData(16, 16, true, 0xffff0000)), new Hitbox(16, 16, 0, 0));
+			// Small Guy
+			//var p:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_ASSHOLE), new Hitbox(16, 16, 0, 0));
+			// Big Guy
+			var p:InputActor = new InputActor(playerStart.x, playerStart.y, im, new Hitbox(32, 32, 0, 0));
+			im.scale = 2;
 			add(p);
 			add(_grid);
 			

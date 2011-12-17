@@ -22,7 +22,7 @@ package
 		override public function init():void 
 		{
 			trace("FP Started.");
-			FP.console.enable();
+			//FP.console.enable();
 			FP.world = new StageWorld();
 			super.init();
 		}

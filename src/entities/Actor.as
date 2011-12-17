@@ -62,11 +62,25 @@ package entities
 		protected function updateVelocity(dt:Number):void
 		{
 			// Velocity is the integral of acceleration. ∫a*dt = t*a + c
-			_v.x += _a.x * dt;
 			_v.y += _a.y * dt;
 			
-			// TODO: Make sure we don't exceed our terminal velocity.
+			// Make sure we don't exceed our terminal velocity.
 			_v.y = Math.min(_v.y, C.V_TERMINAL);
+			
+			// We can only speed up or slow down on the ground.
+			// Apply our friction to slow us down.
+			_v.x += _a.x * dt;
+			if (OnGround)
+			{
+				
+				if (_a.x == 0 || FP.sign(_a.x) != FP.sign(_v.x)) _v.x *= 1 - C.F_DEFAULT;
+			}
+			else
+			{
+				
+			}
+			// Also, put a stop to high-speed funny business.
+			_v.x = FP.clamp(_v.x, -_vMax, _vMax);
 		}
 		
 		protected function updatePosition(dt:Number):void
@@ -104,7 +118,7 @@ package entities
 					}
 					else
 					{
-						_s.y = (Math.floor(_s.y / C.GS)) * C.GS;
+						_s.y = (Math.floor(_s.y / C.GS) + 1) * C.GS;
 					}
 					
 					// Please, stop moving.
@@ -118,6 +132,8 @@ package entities
 			}
 		}
 		
+		public function get OnGround():Boolean { return (collideWith(_collision, _s.x, _s.y + 1) != null); }
+		
 		protected function snapToGrid():void
 		{
 			// Update our entity's x and y so we're aligned to the grid.
@@ -130,6 +146,16 @@ package entities
 		protected var _v:Point;
 		protected var _s:Point;
 		protected var _collision:Entity;
+		
+		/** Horizontal acceleration of input. */
+		protected var _ah:Number = C.A_HORIZONTAL;
+		
+		/** Maximum horizontal speed. */
+		protected var _vMax:Number = C.V_MAX_HORIZONTAL;
+		
+		/** Default jump velocity. */
+		protected var _vj:Number = C.V_JUMP;
+		
 	}
 
 }
