@@ -1,19 +1,32 @@
 <level width="640" height="480">
   <entities>
-    <player x="544" y="96" />
+    <player x="512" y="304" />
   </entities>
   <tiles tileset="zeta" exportMode="XML">
-    <tile x="24" y="7" id="2" />
-    <tile x="24" y="8" id="2" />
-    <tile x="24" y="9" id="2" />
-    <tile x="25" y="6" id="2" />
-    <tile x="25" y="7" id="2" />
-    <tile x="25" y="8" id="2" />
-    <tile x="25" y="9" id="2" />
-    <tile x="26" y="7" id="2" />
-    <tile x="26" y="8" id="2" />
-    <tile x="26" y="9" id="2" />
-    <tile x="27" y="8" id="2" />
+    <tile x="7" y="17" id="0" />
+    <tile x="7" y="18" id="0" />
+    <tile x="8" y="16" id="0" />
+    <tile x="8" y="17" id="0" />
+    <tile x="8" y="18" id="0" />
+    <tile x="8" y="19" id="0" />
+    <tile x="9" y="16" id="0" />
+    <tile x="9" y="17" id="0" />
+    <tile x="9" y="18" id="0" />
+    <tile x="9" y="19" id="0" />
+    <tile x="9" y="20" id="0" />
+    <tile x="10" y="17" id="0" />
+    <tile x="10" y="18" id="0" />
+    <tile x="10" y="19" id="0" />
+    <tile x="10" y="20" id="0" />
+    <tile x="10" y="21" id="1" />
+    <tile x="10" y="22" id="1" />
+    <tile x="10" y="23" id="1" />
+    <tile x="11" y="17" id="0" />
+    <tile x="11" y="18" id="0" />
+    <tile x="11" y="19" id="0" />
+    <tile x="11" y="20" id="0" />
+    <tile x="12" y="18" id="0" />
+    <tile x="12" y="19" id="0" />
   </tiles>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="304" h="16" />

@@ -1,0 +1,12 @@
+<level width="640" height="480">
+  <entities>
+    <player x="240" y="192" />
+  </entities>
+  <tiles tileset="zeta" exportMode="XML" />
+  <collision exportMode="Rectangles">
+    <rect x="0" y="0" w="640" h="16" />
+    <rect x="0" y="16" w="16" h="464" />
+    <rect x="16" y="464" w="624" h="16" />
+    <rect x="624" y="16" w="16" h="448" />
+  </collision>
+</level>
