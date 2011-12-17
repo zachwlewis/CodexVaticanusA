@@ -2,25 +2,28 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import net.flashpunk.Engine;
+	import net.flashpunk.FP;
+	import worlds.StageWorld;
 
 	/**
 	 * ...
 	 * @author 
 	 */
-	[Frame(factoryClass="Preloader")]
-	public class Main extends Sprite 
+	[SWF(width="640", height="480")]
+	public class Main extends Engine 
 	{
 
 		public function Main():void 
 		{
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init);
+			super(640, 480);
 		}
 
-		private function init(e:Event = null):void 
+		override public function init():void 
 		{
-			removeEventListener(Event.ADDED_TO_STAGE, init);
-			// entry point
+			trace("FP Started.");
+			FP.world = new StageWorld();
+			super.init();
 		}
 
 	}
