@@ -1,6 +1,6 @@
 <level width="640" height="480">
   <entities>
-    <player x="480" y="176" />
+    <player x="544" y="96" />
   </entities>
   <tiles tileset="zeta" exportMode="XML">
     <tile x="24" y="7" id="2" />

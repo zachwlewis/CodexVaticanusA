@@ -16,12 +16,13 @@ package
 
 		public function Main():void 
 		{
-			super(640, 480);
+			super(640, 480, 60, true);
 		}
 
 		override public function init():void 
 		{
 			trace("FP Started.");
+			FP.console.enable();
 			FP.world = new StageWorld();
 			super.init();
 		}
