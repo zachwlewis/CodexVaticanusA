@@ -14,6 +14,9 @@ package
 		
 		[Embed(source = '../gfx/editor/player.png')]
 		public static const GFX_ASSHOLE:Class;
+		
+		[Embed(source = '../gfx/editor/strong-man.png')]
+		public static const GFX_STR_ASSHOLE:Class;
 	}
 
 }

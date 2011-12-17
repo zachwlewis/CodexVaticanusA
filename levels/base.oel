@@ -1,6 +1,7 @@
 <level width="640" height="480">
   <entities>
     <player x="240" y="192" />
+    <strongman x="176" y="432" />
   </entities>
   <tiles tileset="zeta" exportMode="XML" />
   <collision exportMode="Rectangles">

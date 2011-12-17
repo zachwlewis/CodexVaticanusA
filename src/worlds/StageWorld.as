@@ -22,7 +22,7 @@ package worlds
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
-			_level = new Level(Assets.LV_BASE);
+			_level = new Level(Assets.LV_DEBUG);
 			
 			var i:Image = new Image(_level.getCollision().data);
 			i.scale = 16.0;
@@ -34,13 +34,19 @@ package worlds
 			
 			
 			var im:Image = new Image(Assets.GFX_ASSHOLE);
-			var playerStart:Point = _level.getEntities("player")[0];
-			// Small Guy
-			//var p:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_ASSHOLE), new Hitbox(16, 16, 0, 0));
-			// Big Guy
-			var p:InputActor = new InputActor(playerStart.x, playerStart.y, im, new Hitbox(32, 32, 0, 0));
-			im.scale = 2;
-			add(p);
+			var playerStart:Point;
+			//* Small Guy
+			playerStart = _level.getEntities("player")[0];
+			var p1:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_ASSHOLE), new Hitbox(12, 14, 0, 0));
+			p1.graphic.y = -2;
+			//*/
+			//* Big Guy
+			playerStart = _level.getEntities("strongman")[0];
+			var p2:InputActor = new InputActor(playerStart.x, playerStart.y, new Image(Assets.GFX_STR_ASSHOLE), new Hitbox(32, 30, 0, 0));
+			p2.graphic.y = -2;
+			//*/
+			add(p1);
+			add(p2);
 			add(_grid);
 			
 			super.begin();

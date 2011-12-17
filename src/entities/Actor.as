@@ -96,7 +96,7 @@ package entities
 					// Okay, that didn't work. Let's back up to the nearest grid position.
 					if (FP.sign(_v.x) > 0)
 					{
-						_s.x = Math.floor(_s.x / C.GS) * C.GS;
+						_s.x = Math.floor((_s.x + width) / C.GS) * C.GS  - width;
 					}
 					else
 					{
@@ -114,7 +114,7 @@ package entities
 					// Backup again.
 					if (FP.sign(_v.y) > 0)
 					{
-						_s.y = Math.floor(_s.y / C.GS) * C.GS;
+						_s.y = Math.floor((_s.y+height) / C.GS) * C.GS - height;
 					}
 					else
 					{
