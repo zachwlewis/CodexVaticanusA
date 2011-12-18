@@ -34,6 +34,8 @@ package entities
 			if (Input.check(Key.DOWN)) _iy++;
 			if (Input.check(Key.UP)) _iy--;
 			if (Input.pressed(Key.SPACE)) jump();
+			if (_ix > 0) _image.flipped = false;
+			else if (_ix < 0) _image.flipped = true;
 			
 			// Only handle horizontal input now.
 			// Some InputActors may use it, though.

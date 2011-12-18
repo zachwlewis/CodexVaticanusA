@@ -2,6 +2,7 @@ package levels
 {
 	import flash.geom.Point;
 	import net.flashpunk.FP;
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.masks.Grid;
 	/**
 	 * ...
@@ -32,6 +33,22 @@ package levels
 			}
 			
 			return g;
+		}
+		
+		public function getForeground():Image
+		{
+			var fg:Image;
+			if (String(xmlData.@foregroundArt) != "none")
+			{
+				fg = new Image(Assets[String(xmlData.@foregroundArt)]);
+			}
+			else
+			{
+				fg = new Image(getCollision().data);
+				fg.scale = 64;
+			}
+			
+			return fg;
 		}
 		
 		public function getEntities(type:String):Vector.<Point>

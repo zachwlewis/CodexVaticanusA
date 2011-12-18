@@ -17,6 +17,7 @@ package
 		public function Main():void 
 		{
 			super(1706, 960, 60, true);
+			FP.screen.color = 0x12120E; 
 		}
 
 		override public function init():void 

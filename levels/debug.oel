@@ -1,4 +1,4 @@
-<level width="1728" height="960">
+<level width="1728" height="960" foregroundArt="MAP_DEBUG" backgroundArt="none">
   <entities>
     <smallman x="128" y="640" />
   </entities>
@@ -43,6 +43,7 @@
     <rect x="960" y="768" w="640" h="32" />
     <rect x="960" y="800" w="576" h="32" />
     <rect x="1024" y="640" w="128" h="64" />
+    <rect x="1088" y="608" w="32" h="32" />
     <rect x="1152" y="672" w="128" h="32" />
     <rect x="1184" y="128" w="64" h="32" />
     <rect x="1312" y="96" w="416" h="32" />

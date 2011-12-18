@@ -13,9 +13,9 @@ package entities
 		{
 			_image = new Image(Assets.GFX_ASSHOLE);
 			_image.y = -4;
-			_image.x = -5;
+			_image.x = -15;
 			
-			super(x, y + 4, _image, new Hitbox(51, 60));
+			super(x, y + 4, _image, new Hitbox(41, 60));
 		}
 		
 	}

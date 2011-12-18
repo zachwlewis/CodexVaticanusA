@@ -22,7 +22,10 @@
     <Width>640</Width>
     <Height>480</Height>
   </CameraSize>
-  <LevelValueDefinitions />
+  <LevelValueDefinitions>
+    <ValueDefinition xsi:type="StringValueDefinition" Name="foregroundArt" Default="none" MaxChars="-1" MultiLine="false" />
+    <ValueDefinition xsi:type="StringValueDefinition" Name="backgroundArt" Default="none" MaxChars="-1" MultiLine="false" />
+  </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="EntityLayerDefinition">
       <Name>entities</Name>
