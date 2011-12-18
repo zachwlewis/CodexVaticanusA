@@ -1,0 +1,36 @@
+<level width="640" height="480">
+  <entities>
+    <player x="32" y="320" />
+  </entities>
+  <tiles tileset="zeta" exportMode="XML">
+    <tile x="13" y="21" id="3" />
+    <tile x="13" y="22" id="3" />
+    <tile x="13" y="23" id="3" />
+    <tile x="13" y="24" id="3" />
+  </tiles>
+  <collision exportMode="Rectangles">
+    <rect x="0" y="0" w="640" h="16" />
+    <rect x="0" y="16" w="16" h="464" />
+    <rect x="16" y="336" w="192" h="144" />
+    <rect x="64" y="320" w="16" h="16" />
+    <rect x="112" y="320" w="32" h="16" />
+    <rect x="208" y="416" w="16" h="64" />
+    <rect x="224" y="304" w="416" h="64" />
+    <rect x="224" y="368" w="144" h="16" />
+    <rect x="224" y="384" w="128" h="16" />
+    <rect x="224" y="432" w="16" h="48" />
+    <rect x="240" y="16" w="400" h="288" />
+    <rect x="240" y="400" w="96" h="16" />
+    <rect x="240" y="448" w="400" h="32" />
+    <rect x="256" y="416" w="32" h="16" />
+    <rect x="304" y="432" w="240" h="16" />
+    <rect x="352" y="416" w="144" h="16" />
+    <rect x="368" y="400" w="64" h="16" />
+    <rect x="384" y="384" w="32" h="16" />
+    <rect x="432" y="368" w="208" h="16" />
+    <rect x="448" y="384" w="192" h="16" />
+    <rect x="512" y="400" w="128" h="16" />
+    <rect x="560" y="416" w="80" h="16" />
+    <rect x="624" y="432" w="16" h="16" />
+  </collision>
+</level>
