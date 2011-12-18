@@ -26,7 +26,7 @@ package worlds
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
-			_level = new Level(Assets.LV_BASE);
+			_level = new Level(Assets.LV_DEBUG);
 			_grid = new Entity(0,0,_level.getForeground(),_level.getCollision())
 		}
 		

@@ -115,7 +115,7 @@ package entities
 					// Backup again.
 					if (FP.sign(_v.y) > 0)
 					{
-						_s.y = Math.floor((_s.y+height) / C.GS) * C.GS - height;
+						_s.y = Math.floor((_s.y + height) / C.GS) * C.GS - height;
 					}
 					else
 					{
