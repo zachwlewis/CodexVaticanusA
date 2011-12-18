@@ -44,6 +44,7 @@ package entities
 			if (OnGround)
 			{
 				_v.y = _vj;
+				trace(_vj);
 			}
 		}
 		

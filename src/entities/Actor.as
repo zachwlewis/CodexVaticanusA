@@ -156,7 +156,7 @@ package entities
 		protected var _vMax:Number = C.V_MAX_HORIZONTAL;
 		
 		/** Default jump velocity. */
-		protected var _vj:Number = C.V_JUMP;
+		protected var _vj:Number =  C.V_JUMP;
 		
 	}
 

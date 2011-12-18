@@ -10,13 +10,13 @@ package
 	 * ...
 	 * @author 
 	 */
-	[SWF(width="1024", height="768")]
+	[SWF(width="1706", height="960")]
 	public class Main extends Engine 
 	{
 
 		public function Main():void 
 		{
-			super(1024, 768, 60, true);
+			super(1706, 960, 60, true);
 		}
 
 		override public function init():void 

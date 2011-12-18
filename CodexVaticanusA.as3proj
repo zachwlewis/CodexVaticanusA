@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="bin\CodexVaticanusA.swf" />
     <movie fps="60" />
-    <movie width="640" />
-    <movie height="480" />
+    <movie width="1706" />
+    <movie height="960" />
     <movie version="10" />
     <movie minorVersion="3" />
     <movie platform="Flash Player" />

@@ -4,16 +4,16 @@
   <BackgroundColor A="255" R="50" G="55" B="67" />
   <GridColor A="255" R="136" G="141" B="162" />
   <LevelDefaultSize>
-    <Width>1024</Width>
-    <Height>768</Height>
+    <Width>1728</Width>
+    <Height>960</Height>
   </LevelDefaultSize>
   <LevelMinimumSize>
-    <Width>1024</Width>
-    <Height>768</Height>
+    <Width>1728</Width>
+    <Height>960</Height>
   </LevelMinimumSize>
   <LevelMaximumSize>
-    <Width>4096</Width>
-    <Height>3072</Height>
+    <Width>6824</Width>
+    <Height>6912</Height>
   </LevelMaximumSize>
   <Filename>C:\Users\Zachary\Documents\CodexVaticanusA\levels\CodexVaticanusA.oep</Filename>
   <AngleMode>Radians</AngleMode>
@@ -51,16 +51,16 @@
   </LayerDefinitions>
   <Tilesets />
   <EntityDefinitions>
-    <EntityDefinition Name="player" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+    <EntityDefinition Name="smallman" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>16</Width>
-        <Height>16</Height>
+        <Width>64</Width>
+        <Height>64</Height>
       </Size>
       <Origin>
         <X>0</X>
         <Y>0</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\editor\player.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\editor\smallman.png" Tiled="false">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
