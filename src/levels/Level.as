@@ -1,5 +1,6 @@
 package levels 
 {
+	import flash.display.BitmapData;
 	import flash.geom.Point;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Image;
@@ -45,7 +46,7 @@ package levels
 			else
 			{
 				fg = new Image(getCollision().data);
-				fg.scale = 64;
+				fg.scale = 16;
 			}
 			
 			return fg;

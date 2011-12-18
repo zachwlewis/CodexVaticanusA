@@ -15,8 +15,8 @@ package
 		[Embed(source='../levels/base.oel', mimeType='application/octet-stream')]
 		public static const LV_BASE:Class;
 				
-		[Embed(source = '../gfx/editor/smallman.png')]
-		public static const GFX_ASSHOLE:Class;
+		[Embed(source = '../gfx/characters/smallman_animated.png')]
+		public static const GFX_ANI_SMALLMAN:Class;
 		
 		[Embed(source = '../gfx/editor/strong-man.png')]
 		public static const GFX_STR_ASSHOLE:Class;
