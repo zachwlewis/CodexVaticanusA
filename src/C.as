@@ -13,7 +13,7 @@ package
 		public static const V_TERMINAL:Number = 4;
 		
 		/** Grid Size */
-		public static const GS:uint = 16;
+		public static const GS:uint = 32;
 		
 		public static const A_HORIZONTAL:Number = 1.5;
 		

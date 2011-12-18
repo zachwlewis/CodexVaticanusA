@@ -10,19 +10,19 @@ package
 	 * ...
 	 * @author 
 	 */
-	[SWF(width="640", height="480")]
+	[SWF(width="1024", height="768")]
 	public class Main extends Engine 
 	{
 
 		public function Main():void 
 		{
-			super(640, 480, 60, true);
+			super(1024, 768, 60, true);
 		}
 
 		override public function init():void 
 		{
 			trace("FP Started.");
-			FP.console.enable();
+			//FP.console.enable();
 			FP.world = new StageWorld();
 			super.init();
 		}

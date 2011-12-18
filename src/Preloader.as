@@ -5,8 +5,7 @@ package
 	import flash.text.*;
 	import flash.utils.getDefinitionByName;
 	
-	[SWF(width="640", height="480")]
-	
+	[SWF(width="1024", height="768")]
 	public class Preloader extends MovieClip 
 	{
 		private var loader:Sprite = new Sprite();
