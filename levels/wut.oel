@@ -1,0 +1,12 @@
+<level width="2683" height="1536">
+  <entities>
+    <onHit x="64" y="640" width="64" height="64" triggerTargetID="0" />
+    <water x="128" y="544" width="64" height="160" objectID="0" />
+  </entities>
+  <collision exportMode="Rectangles">
+    <rect x="0" y="0" w="1024" h="64" />
+    <rect x="0" y="64" w="64" h="704" />
+    <rect x="64" y="704" w="960" h="64" />
+    <rect x="960" y="64" w="64" h="640" />
+  </collision>
+</level>

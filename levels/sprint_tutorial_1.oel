@@ -1,0 +1,12 @@
+<level width="2240" height="1600">
+  <entities>
+    <jumpman x="128" y="1504" />
+  </entities>
+  <collision exportMode="Rectangles">
+    <rect x="0" y="0" w="2240" h="64" />
+    <rect x="0" y="64" w="64" h="1536" />
+    <rect x="64" y="1536" w="2176" h="64" />
+    <rect x="1856" y="1408" w="384" h="128" />
+    <rect x="2176" y="64" w="64" h="1344" />
+  </collision>
+</level>
