@@ -2,6 +2,7 @@ package worlds
 {
 	import entities.Actor;
 	import entities.InputActor;
+	import entities.items.BreakableObject;
 	import entities.JumpMan;
 	import entities.SmallMan;
 	import entities.StrongMan;
@@ -26,7 +27,7 @@ package worlds
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
-			_level = new Level(Assets.LV_DEBUG);
+			_level = new Level(Assets.LV_BASE);
 			_grid = new Entity(0,0,_level.getForeground(),_level.getCollision())
 		}
 		
@@ -35,6 +36,13 @@ package worlds
 			if (_level.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(_level.getEntities("jumpman")[0].x, _level.getEntities("jumpman")[0].y)))};
 			if (_level.getEntities("smallman").length > 0) { _player = SmallMan(add(new SmallMan(_level.getEntities("smallman")[0].x, _level.getEntities("smallman")[0].y)))};
 			if (_level.getEntities("strongman").length > 0) { _player = StrongMan(add(new StrongMan(_level.getEntities("strongman")[0].x, _level.getEntities("strongman")[0].y)))};
+			if (_level.getEntities("breakablepot").length > 0)
+			{
+				for each (var p:Point in _level.getEntities("breakablepot"))
+				{
+					add(new BreakableObject(p.x, p.y, Assets.GFX_POT, new Hitbox(64, 64,0,0)));
+				}
+			}
 			
 			add(_grid);
 			

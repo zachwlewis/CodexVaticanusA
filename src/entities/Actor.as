@@ -24,12 +24,16 @@ package entities
 		public function get Position():Point { return _s; }
 		public function set Position(value:Point):void { Position = value.clone(); }
 		
+		public function get HasPhysics():Boolean { return _hasPhysics; }
+		public function set HasPhysics(value:Boolean):void { _hasPhysics = value; }
+		
 		public function Actor(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null) 
 		{
 			super(x, y, graphic, mask);
 			_a = new Point(0, C.G);
 			_v = new Point();
-			_s = new Point(x, y);			
+			_s = new Point(x, y);
+			_hasPhysics = true;
 		}
 		
 		override public function added():void 
@@ -37,6 +41,7 @@ package entities
 			if (StageWorld(world) != null)
 			{
 				_collision = StageWorld(world).CollisionGrid;
+				_collision.type = "map";
 			}
 			else
 			{
@@ -48,10 +53,13 @@ package entities
 		override public function update():void 
 		{
 			var elapsedTime:Number = 1 / FP.elapsed;
-			updateAcceleration(elapsedTime);
-			updateVelocity(elapsedTime);
-			updatePosition(elapsedTime);
-			snapToGrid();
+			if (_hasPhysics)
+			{
+				updateAcceleration(elapsedTime);
+				updateVelocity(elapsedTime);
+				updatePosition(elapsedTime);
+				snapToGrid();
+			}
 			super.update();
 		}
 		
@@ -92,7 +100,7 @@ package entities
 			{
 				// Handle x-collisions.
 				_s.x += _v.x;
-				if (collideWith(_collision, _s.x, _s.y))
+				if (collideTypes(["breakable",_collision.type], _s.x, _s.y))
 				{
 					// Okay, that didn't work. Let's back up to the nearest grid position.
 					if (FP.sign(_v.x) > 0)
@@ -110,7 +118,7 @@ package entities
 				
 				// Handle y-collisions.
 				_s.y += _v.y;
-				if (collideWith(_collision, _s.x, _s.y))
+				if (collideTypes(["breakable",_collision.type], _s.x, _s.y))
 				{
 					// Backup again.
 					if (FP.sign(_v.y) > 0)
@@ -133,7 +141,7 @@ package entities
 			}
 		}
 		
-		public function get OnGround():Boolean { return (collideWith(_collision, _s.x, _s.y + 1) != null); }
+		public function get OnGround():Boolean { return (collideTypes([_collision.type,"breakable"], _s.x, _s.y + 1) != null); }
 		
 		protected function snapToGrid():void
 		{
@@ -143,11 +151,14 @@ package entities
 			y = Math.floor(_s.y);
 		}
 		
+		public function TakeHit():void { }
+		
 		protected var _a:Point;
 		protected var _v:Point;
 		protected var _s:Point;
 		protected var _collision:Entity;
 		protected var _image:Image;
+		protected var _hasPhysics:Boolean;
 		
 		/** Horizontal acceleration of input. */
 		protected var _ah:Number = C.A_HORIZONTAL;

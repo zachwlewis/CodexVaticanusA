@@ -57,13 +57,5 @@ package entities
 			}
 		}
 		
-		
-		private function startIdleCycle():void
-		{
-			trace("done");
-			Spritemap(_image).play("idle", false, 0);
-			Spritemap(_image).callback = null;
-			
-		}		
 	}
 }

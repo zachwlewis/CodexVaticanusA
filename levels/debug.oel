@@ -1,6 +1,6 @@
 <level width="1728" height="960" foregroundArt="MAP_DEBUG" backgroundArt="none">
   <entities>
-    <smallman x="128" y="640" />
+    <smallman x="256" y="640" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1728" h="96" />

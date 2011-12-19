@@ -60,10 +60,10 @@
         <Height>64</Height>
       </Size>
       <Origin>
-        <X>0</X>
+        <X>128</X>
         <Y>0</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\editor\smallman.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\characters\smallman_animated.png" Tiled="true">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
@@ -71,14 +71,14 @@
     </EntityDefinition>
     <EntityDefinition Name="strongman" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
-        <Width>32</Width>
-        <Height>32</Height>
+        <Width>128</Width>
+        <Height>128</Height>
       </Size>
       <Origin>
         <X>0</X>
         <Y>0</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\editor\strong-man.png" Tiled="false">
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\characters\strongman_animated.png" Tiled="true">
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
@@ -130,6 +130,23 @@
       </ImageDefinition>
       <ValueDefinitions>
         <ValueDefinition xsi:type="IntValueDefinition" Name="objectID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
+    </EntityDefinition>
+    <EntityDefinition Name="breakablepot" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\items\breakable_pot.png" Tiled="true">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="isBroken" Default="false" />
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
     </EntityDefinition>
