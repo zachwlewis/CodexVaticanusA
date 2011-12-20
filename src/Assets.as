@@ -27,6 +27,9 @@ package
 		[Embed(source='../levels/jump_tutorial_2.oel', mimeType='application/octet-stream')]
 		public static const LV_JUMP2:Class;
 		
+		[Embed(source = '../levels/map_jump2.png')]
+		public static const MAP_JUMP2:Class;
+		
 		[Embed(source='../levels/strong_tutorial_1.oel', mimeType='application/octet-stream')]
 		public static const LV_STRONG1:Class;
 		

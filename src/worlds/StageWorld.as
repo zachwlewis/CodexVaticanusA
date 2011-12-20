@@ -51,7 +51,7 @@ package worlds
 			var glow:Image = new Image(Assets.GFX_GLOW);
 			glow.centerOO();
 			_glowTween = new CircularMotion(null,Tween.LOOPING)
-			_glowTween.setMotion(.5, 0, .1, 0, false, 1000);			
+			_glowTween.setMotion(.3, 0, .1, 0, false, 400);			
 			_playerGlow = addGraphic(glow, -1);
 			addTween(_glowTween, true);
 			loadLevel(_level);

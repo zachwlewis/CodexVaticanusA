@@ -1,4 +1,4 @@
-<level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
+<level width="2560" height="1856" foregroundArt="MAP_JUMP2" backgroundArt="none" wellLit="False">
   <entities>
     <door x="2432" y="768" targetMap="LV_TUTORIAL_END" targetID="0" objectID="1" />
     <door x="64" y="800" targetMap="LV_JUMP1" targetID="0" objectID="0" />
