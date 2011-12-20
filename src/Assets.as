@@ -39,8 +39,8 @@ package
 		[Embed(source = '../gfx/characters/strongman_animated.png')]
 		public static const GFX_ANI_STRONGMAN:Class;
 		
-		[Embed(source = '../gfx/editor/jumpman.png')]
-		public static const GFX_JMP_ASSHOLE:Class;
+		[Embed(source = '../gfx/characters/jumpman_animated.png')]
+		public static const GFX_ANI_JUMPMAN:Class;
 		
 		[Embed(source = '../gfx/items/breakable_pot.png')]
 		public static const GFX_POT:Class;
@@ -50,6 +50,12 @@ package
 		
 		[Embed(source = '../gfx/items/door.png')]
 		public static const GFX_DOOR:Class;
+		
+		[Embed(source = '../sfx/music.swf', symbol="intro")]
+		public static const BG_INTRO:Class;
+		
+		[Embed(source = '../sfx/music.swf', symbol="world1")]
+		public static const BG_WORLD1:Class;
 	}
 
 }

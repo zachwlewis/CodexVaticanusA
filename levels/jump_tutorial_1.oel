@@ -1,6 +1,7 @@
 <level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
   <entities>
-    <smallman x="288" y="1760" />
+    <jumpman x="128" y="1696" />
+    <door x="2400" y="800" targetMap="" targetID="0" objectID="0" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="2560" h="32" />

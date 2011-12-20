@@ -23,6 +23,12 @@ package entities.items
 			_targetID = targetID;
 			_objectID = objectID;
 			_hasPhysics = false;
+			type = "door";
+		}
+		
+		public function useDoor():void
+		{
+			
 		}
 		
 	}

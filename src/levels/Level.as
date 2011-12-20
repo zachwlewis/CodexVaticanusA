@@ -47,6 +47,7 @@ package levels
 			{
 				fg = new Image(getCollision().data);
 				fg.scale = 16;
+				fg.color = 0x4D4D3A;
 			}
 			
 			return fg;
