@@ -63,6 +63,11 @@ package levels
 			return v;
 		}
 		
+		public function getEntitiesAsXML(type:String):XMLList
+		{
+			return xmlData.entities[type];
+		}
+		
 	}
 
 }
