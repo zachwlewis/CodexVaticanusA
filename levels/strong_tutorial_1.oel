@@ -9,14 +9,14 @@
     <breakablepot x="736" y="800" isBroken="False" />
     <breakablepot x="800" y="800" isBroken="False" />
     <breakablepot x="768" y="736" isBroken="False" />
-    <breakablepot x="1568" y="864" isBroken="False" />
-    <breakablepot x="1568" y="800" isBroken="False" />
-    <breakablepot x="1504" y="800" isBroken="False" />
     <breakablepot x="1504" y="864" isBroken="False" />
-    <breakablepot x="1440" y="864" isBroken="False" />
+    <breakablepot x="1504" y="800" isBroken="False" />
     <breakablepot x="1440" y="800" isBroken="False" />
-    <breakablepot x="1376" y="800" isBroken="False" />
+    <breakablepot x="1440" y="864" isBroken="False" />
     <breakablepot x="1376" y="864" isBroken="False" />
+    <breakablepot x="1376" y="800" isBroken="False" />
+    <breakablepot x="1312" y="800" isBroken="False" />
+    <breakablepot x="1312" y="864" isBroken="False" />
     <breakablepot x="1632" y="640" isBroken="False" />
     <breakablepot x="1632" y="576" isBroken="False" />
     <breakablepot x="1568" y="640" isBroken="False" />
@@ -33,6 +33,7 @@
     <breakablepot x="1568" y="512" isBroken="False" />
     <breakablepot x="1504" y="576" isBroken="False" />
     <breakablepot x="1440" y="640" isBroken="False" />
+    <door x="1600" y="800" targetMap="strong_tutorial_2" targetID="0" objectID="0" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1728" h="32" />

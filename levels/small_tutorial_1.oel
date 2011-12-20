@@ -1,6 +1,7 @@
 <level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
   <entities>
     <smallman x="96" y="832" />
+    <door x="2432" y="1440" targetMap="" targetID="0" objectID="0" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="2560" h="32" />
@@ -21,8 +22,9 @@
     <rect x="1632" y="1376" w="192" h="64" />
     <rect x="1696" y="1440" w="128" h="64" />
     <rect x="1952" y="1440" w="128" h="128" />
-    <rect x="2144" y="1376" w="416" h="128" />
+    <rect x="2144" y="1376" w="416" h="64" />
+    <rect x="2144" y="1440" w="256" h="64" />
     <rect x="2528" y="32" w="32" h="480" />
-    <rect x="2528" y="1504" w="32" h="64" />
+    <rect x="2528" y="1440" w="32" h="128" />
   </collision>
 </level>

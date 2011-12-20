@@ -1,28 +1,47 @@
-<level width="1600" height="900">
-  <entities />
+<level width="1728" height="960" foregroundArt="none" backgroundArt="none">
+  <entities>
+    <strongman x="96" y="800" />
+    <door x="128" y="800" targetMap="strong_tutorial_1" targetID="0" objectID="1" />
+    <door x="1600" y="544" targetMap="" targetID="0" objectID="2" />
+    <breakablepot x="1376" y="416" isBroken="False" />
+    <breakablepot x="1440" y="416" isBroken="False" />
+    <breakablepot x="1376" y="480" isBroken="False" />
+    <breakablepot x="1440" y="480" isBroken="False" />
+    <breakablestone x="1376" y="544" />
+    <breakablestone x="1440" y="544" />
+    <breakablestone x="1440" y="608" />
+    <breakablestone x="1376" y="608" />
+    <breakablestone x="320" y="864" />
+    <breakablestone x="320" y="800" />
+    <breakablepot x="320" y="736" isBroken="False" />
+    <breakablepot x="320" y="672" isBroken="False" />
+    <breakablepot x="576" y="736" isBroken="False" />
+    <breakablepot x="640" y="736" isBroken="False" />
+    <breakablepot x="640" y="672" isBroken="False" />
+    <breakablepot x="576" y="672" isBroken="False" />
+    <breakablestone x="576" y="800" />
+    <breakablestone x="640" y="800" />
+    <breakablestone x="640" y="864" />
+    <breakablestone x="576" y="864" />
+  </entities>
   <collision exportMode="Rectangles">
-    <rect x="0" y="0" w="1376" h="64" />
-    <rect x="0" y="64" w="64" h="832" />
-    <rect x="64" y="480" w="288" h="416" />
-    <rect x="96" y="288" w="32" h="128" />
-    <rect x="128" y="320" w="32" h="32" />
-    <rect x="160" y="64" w="384" h="32" />
-    <rect x="160" y="96" w="352" h="32" />
-    <rect x="224" y="128" w="64" h="128" />
-    <rect x="352" y="544" w="64" h="352" />
-    <rect x="416" y="128" w="64" h="32" />
-    <rect x="416" y="608" w="64" h="288" />
-    <rect x="480" y="672" w="1120" h="224" />
-    <rect x="576" y="64" w="160" h="32" />
-    <rect x="608" y="96" w="96" h="32" />
-    <rect x="608" y="416" w="64" h="64" />
-    <rect x="640" y="128" w="32" h="32" />
-    <rect x="768" y="64" w="608" h="32" />
-    <rect x="800" y="96" w="576" h="32" />
-    <rect x="800" y="416" w="64" h="64" />
-    <rect x="1024" y="128" w="352" h="96" />
-    <rect x="1056" y="224" w="320" h="32" />
-    <rect x="1088" y="256" w="288" h="32" />
-    <rect x="1344" y="416" w="256" h="256" />
+    <rect x="0" y="0" w="1728" h="32" />
+    <rect x="0" y="32" w="32" h="928" />
+    <rect x="32" y="928" w="1696" h="32" />
+    <rect x="864" y="864" w="864" h="64" />
+    <rect x="928" y="800" w="800" h="64" />
+    <rect x="992" y="736" w="384" h="64" />
+    <rect x="1056" y="672" w="320" h="64" />
+    <rect x="1120" y="480" w="256" h="64" />
+    <rect x="1184" y="416" w="192" h="64" />
+    <rect x="1248" y="352" w="480" h="64" />
+    <rect x="1312" y="288" w="416" h="64" />
+    <rect x="1376" y="224" w="352" h="64" />
+    <rect x="1440" y="160" w="288" h="64" />
+    <rect x="1504" y="96" w="224" h="64" />
+    <rect x="1504" y="416" w="224" h="128" />
+    <rect x="1504" y="672" w="224" h="128" />
+    <rect x="1568" y="32" w="160" h="64" />
+    <rect x="1696" y="544" w="32" h="128" />
   </collision>
 </level>
