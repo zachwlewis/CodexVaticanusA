@@ -32,8 +32,9 @@ package entities
 			if (Input.check(Key.LEFT)) _ix--;
 			if (Input.check(Key.RIGHT)) _ix++;
 			if (Input.check(Key.DOWN)) _iy++;
-			if (Input.check(Key.UP)) _iy--;
+			if (Input.check(Key.UP)) interact();
 			if (Input.pressed(Key.SPACE)) jump();
+			else if (Input.released(Key.SPACE)) shorthop();
 			if (_ix > 0) _image.flipped = false;
 			else if (_ix < 0) _image.flipped = true;
 			
@@ -41,11 +42,24 @@ package entities
 			// Some InputActors may use it, though.
 		}
 		
+		protected function interact():void
+		{
+			
+		}
+		
 		protected function jump():void
 		{
 			if (OnGround)
 			{
 				_v.y = _vj;
+			}
+		}
+		
+		protected function shorthop():void
+		{
+			if (!OnGround && _v.y < 0)
+			{
+				_v.y = Math.max(_v.y, -2);
 			}
 		}
 		

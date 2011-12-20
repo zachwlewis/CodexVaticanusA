@@ -17,6 +17,7 @@ package worlds
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.masks.Grid;
 	import net.flashpunk.masks.Hitbox;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.World;
 	
 	/**
@@ -31,8 +32,10 @@ package worlds
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
-			_level = new Level(Assets.LV_BASE);
-			_grid = new Entity(0,0,_level.getForeground(),_level.getCollision())
+			_level = new Level(Assets.LV_JUMP1);
+			_grid = new Entity(0, 0, _level.getForeground(), _level.getCollision());
+			var a:Sfx = new Sfx(Assets.BG_WORLD1);
+			a.loop();
 		}
 		
 		override public function begin():void 
