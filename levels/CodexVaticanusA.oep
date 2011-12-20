@@ -25,6 +25,7 @@
   <LevelValueDefinitions>
     <ValueDefinition xsi:type="StringValueDefinition" Name="foregroundArt" Default="none" MaxChars="-1" MultiLine="false" />
     <ValueDefinition xsi:type="StringValueDefinition" Name="backgroundArt" Default="none" MaxChars="-1" MultiLine="false" />
+    <ValueDefinition xsi:type="BoolValueDefinition" Name="wellLit" Default="false" />
   </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="EntityLayerDefinition">

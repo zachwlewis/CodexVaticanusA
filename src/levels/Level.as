@@ -22,7 +22,7 @@ package levels
 		 * Parses the map file for collision data and generates a grid.
 		 * @return collision data for the map
 		 */
-		public function getCollision():Grid
+		public function get Collision():Grid
 		{
 			var g:Grid = new Grid(uint(xmlData.@width), uint(xmlData.@height), 16, 16, 0, 0);
 			g.usePositions = true;
@@ -36,7 +36,7 @@ package levels
 			return g;
 		}
 		
-		public function getForeground():Image
+		public function get Foreground():Image
 		{
 			var fg:Image;
 			if (String(xmlData.@foregroundArt) != "none")
@@ -45,12 +45,17 @@ package levels
 			}
 			else
 			{
-				fg = new Image(getCollision().data);
+				fg = new Image(Collision.data);
 				fg.scale = 16;
 				fg.color = 0x4D4D3A;
 			}
 			
 			return fg;
+		}
+		
+		public function get WellLit():Boolean
+		{
+			return String(xmlData.@wellLit) == "True";
 		}
 		
 		public function getEntities(type:String):Vector.<Point>

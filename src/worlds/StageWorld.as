@@ -48,13 +48,13 @@ package worlds
 		
 		override public function begin():void 
 		{			
-			loadLevel(_level);
 			var glow:Image = new Image(Assets.GFX_GLOW);
 			glow.centerOO();
 			_glowTween = new CircularMotion(null,Tween.LOOPING)
 			_glowTween.setMotion(.5, 0, .1, 0, false, 1000);			
 			_playerGlow = addGraphic(glow, -1);
 			addTween(_glowTween, true);
+			loadLevel(_level);
 			super.begin();
 		}
 		
@@ -82,8 +82,8 @@ package worlds
 		{
 			var p:Point;
 			var o:XML;
-
-			_grid = new Entity(0, 0, loadTarget.getForeground(), loadTarget.getCollision());
+			_grid = new Entity(0, 0, loadTarget.Foreground, loadTarget.Collision);
+			_playerGlow.visible = !_level.WellLit;
 			if (_player == null || _player.world != this)
 			{
 				if (loadTarget.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(loadTarget.getEntities("jumpman")[0].x, loadTarget.getEntities("jumpman")[0].y)))};
