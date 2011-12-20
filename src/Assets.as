@@ -9,6 +9,21 @@ package
 		[Embed(source='../levels/debug.oel', mimeType='application/octet-stream')]
 		public static const LV_DEBUG:Class;
 		
+		[Embed(source='../levels/small_tutorial_1.oel', mimeType='application/octet-stream')]
+		public static const LV_SMALL1:Class;
+		
+		[Embed(source='../levels/small_tutorial_2.oel', mimeType='application/octet-stream')]
+		public static const LV_SMALL2:Class;
+		
+		[Embed(source='../levels/jump_tutorial_1.oel', mimeType='application/octet-stream')]
+		public static const LV_JUMP1:Class;
+		
+		[Embed(source='../levels/jump_tutorial_2.oel', mimeType='application/octet-stream')]
+		public static const LV_JUMP2:Class;
+		
+		[Embed(source='../levels/strong_tutorial_1.oel', mimeType='application/octet-stream')]
+		public static const LV_STRONG1:Class;
+		
 		[Embed(source = '../levels/map_debug.png')]
 		public static const MAP_DEBUG:Class;
 		

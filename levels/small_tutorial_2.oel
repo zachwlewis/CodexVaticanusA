@@ -1,6 +1,6 @@
-<level width="2880" height="1792">
+<level width="2880" height="1792" foregroundArt="none" backgroundArt="none">
   <entities>
-    <jumpman x="192" y="160" />
+    <smallman x="256" y="128" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="2880" h="64" />
@@ -29,6 +29,7 @@
     <rect x="2560" y="864" w="96" h="192" />
     <rect x="2560" y="1120" w="96" h="160" />
     <rect x="2560" y="1344" w="96" h="64" />
-    <rect x="2720" y="544" w="160" h="1248" />
+    <rect x="2656" y="1760" w="224" h="32" />
+    <rect x="2720" y="416" w="160" h="1344" />
   </collision>
 </level>
