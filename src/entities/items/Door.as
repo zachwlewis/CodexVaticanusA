@@ -5,6 +5,7 @@ package entities.items
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
 	import net.flashpunk.masks.Hitbox;
+	import worlds.StageWorld;
 	
 	/**
 	 * ...
@@ -14,6 +15,7 @@ package entities.items
 	{
 		protected var _targetMap:String;
 		protected var _targetID:uint;
+		
 		public function Door(x:Number, y:Number, targetMap:String, targetID:uint, objectID:uint) 
 		{
 			var graphic:Image = new Image(Assets.GFX_DOOR);
@@ -28,7 +30,7 @@ package entities.items
 		
 		public function useDoor():void
 		{
-			
+			StageWorld(world).changeLevel(_targetMap, _targetID);
 		}
 		
 	}

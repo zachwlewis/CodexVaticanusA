@@ -1,19 +1,6 @@
 <level width="1728" height="960" foregroundArt="MAP_BASE" backgroundArt="none">
   <entities>
-    <strongman x="736" y="288" />
-    <breakablepot x="928" y="352" isBroken="False" />
-    <breakablepot x="864" y="352" isBroken="False" />
-    <breakablepot x="928" y="288" isBroken="False" />
-    <breakablepot x="672" y="416" isBroken="False" />
-    <breakablepot x="608" y="416" isBroken="False" />
-    <breakablepot x="544" y="416" isBroken="False" />
-    <breakablepot x="480" y="416" isBroken="False" />
-    <breakablepot x="416" y="416" isBroken="False" />
-    <breakablestone x="992" y="352" />
-    <breakablestone x="1056" y="288" />
-    <breakablestone x="1120" y="256" />
     <door x="288" y="800" targetMap="" targetID="0" objectID="0" />
-    <door x="1312" y="352" targetMap="" targetID="0" objectID="0" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1728" h="32" />

@@ -1,7 +1,7 @@
 <level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
   <entities>
     <smallman x="96" y="832" />
-    <door x="2432" y="1440" targetMap="" targetID="0" objectID="0" />
+    <door x="2432" y="1440" targetMap="LV_DEBUG" targetID="0" objectID="1" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="2560" h="32" />

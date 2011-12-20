@@ -1,5 +1,6 @@
 package entities 
 {
+	import entities.items.Door;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
@@ -32,7 +33,7 @@ package entities
 			if (Input.check(Key.LEFT)) _ix--;
 			if (Input.check(Key.RIGHT)) _ix++;
 			if (Input.check(Key.DOWN)) _iy++;
-			if (Input.check(Key.UP)) interact();
+			if (Input.pressed(Key.UP)) interact();
 			if (Input.pressed(Key.SPACE)) jump();
 			else if (Input.released(Key.SPACE)) shorthop();
 			if (_ix > 0) _image.flipped = false;
@@ -44,7 +45,8 @@ package entities
 		
 		protected function interact():void
 		{
-			
+			var d:Door = Door(collide("door", x, y));
+			if (d != null) d.useDoor();
 		}
 		
 		protected function jump():void

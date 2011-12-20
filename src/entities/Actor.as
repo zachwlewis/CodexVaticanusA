@@ -27,6 +27,8 @@ package entities
 		public function get HasPhysics():Boolean { return _hasPhysics; }
 		public function set HasPhysics(value:Boolean):void { _hasPhysics = value; }
 		
+		public function get ObjectID():uint { return _objectID; }
+		
 		public function Actor(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null) 
 		{
 			super(x, y, graphic, mask);

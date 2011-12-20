@@ -10,6 +10,7 @@ package worlds
 	import entities.SmallMan;
 	import entities.StrongMan;
 	import flash.display.BitmapData;
+	import flash.display.InterpolationMethod;
 	import flash.geom.Point;
 	import levels.Level;
 	import net.flashpunk.Entity;
@@ -32,45 +33,84 @@ package worlds
 		public function StageWorld() 
 		{
 			// Decide what level to load. 
-			_level = new Level(Assets.LV_JUMP1);
-			_grid = new Entity(0, 0, _level.getForeground(), _level.getCollision());
-			var a:Sfx = new Sfx(Assets.BG_WORLD1);
-			a.loop();
+			_level = new Level(Assets.LV_DEBUG);
+			_bgm = new Sfx(Assets.BG_INTRO,switchSong);
+			_bgm.play();
+			_tutorialState = 0;
 		}
 		
 		override public function begin():void 
 		{			
+			loadLevel(_level);
+			
+			super.begin();
+		}
+		
+		protected function switchSong():void
+		{
+			_bgm = new Sfx(Assets.BG_WORLD1);
+			_bgm.loop();
+		}
+		
+		protected function unloadLevel(loadTarget:Level):void
+		{
+			//unload current shit.
+			var a:Array = [];
+			getAll(a);
+			for each(var e:Entity in a)
+			{
+				if (e != _player)
+				{
+					remove(e);
+				}
+			}
+		}
+		
+		protected function loadLevel(loadTarget:Level, targetID:int = -1):void
+		{
 			var p:Point;
 			var o:XML;
-			if (_level.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(_level.getEntities("jumpman")[0].x, _level.getEntities("jumpman")[0].y)))};
-			if (_level.getEntities("smallman").length > 0) { _player = SmallMan(add(new SmallMan(_level.getEntities("smallman")[0].x, _level.getEntities("smallman")[0].y)))};
-			if (_level.getEntities("strongman").length > 0) { _player = StrongMan(add(new StrongMan(_level.getEntities("strongman")[0].x, _level.getEntities("strongman")[0].y)))};
-			if (_level.getEntities("breakablepot").length > 0)
+
+			_grid = new Entity(0, 0, loadTarget.getForeground(), loadTarget.getCollision());
+			if (_player == null || _player.world != this)
 			{
-				for each (p in _level.getEntities("breakablepot"))
+				if (loadTarget.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(loadTarget.getEntities("jumpman")[0].x, loadTarget.getEntities("jumpman")[0].y)))};
+				if (loadTarget.getEntities("smallman").length > 0) { _player = SmallMan(add(new SmallMan(loadTarget.getEntities("smallman")[0].x, loadTarget.getEntities("smallman")[0].y)))};
+				if (loadTarget.getEntities("strongman").length > 0) { _player = StrongMan(add(new StrongMan(loadTarget.getEntities("strongman")[0].x, loadTarget.getEntities("strongman")[0].y))) };
+			}
+			if (loadTarget.getEntities("breakablepot").length > 0)
+			{
+				for each (p in loadTarget.getEntities("breakablepot"))
 				{
 					add(new BreakablePot(p.x, p.y));
 				}
 			}
-			if (_level.getEntities("breakablestone").length > 0)
+			if (loadTarget.getEntities("breakablestone").length > 0)
 			{
-				for each (p in _level.getEntities("breakablestone"))
+				for each (p in loadTarget.getEntities("breakablestone"))
 				{
 					add(new BreakableStone(p.x, p.y));
 				}
 			}
 			
-			if (_level.getEntities("door").length > 0)
+			if (loadTarget.getEntities("door").length > 0)
 			{
-				for each (o in _level.getEntitiesAsXML("door"))
+				for each (o in loadTarget.getEntitiesAsXML("door"))
 				{
-					add(new Door(Number(o.@x), Number(o.@y), o.@targetMap, uint(o.targetID), uint(o.objectID)));
+					trace(o.@objectID);
+					trace("Door target: " + targetID);
+					var d:Door = new Door(Number(o.@x), Number(o.@y), o.@targetMap, uint(o.targetID), uint(o.objectID))
+					if (d.ObjectID == targetID)
+					{
+						_player.Position.x = d.x + d.halfWidth - _player.halfWidth;
+						_player.Position.y = d.y + d.height - _player.height;
+						trace("Placed player." + _player.x, _player.y);
+					}
+					add(d);					
 				}
 			}
 			
 			add(_grid);
-			
-			super.begin();
 		}
 		
 		override public function update():void 
@@ -85,9 +125,50 @@ package worlds
 			FP.camera.y = FP.clamp(_player.y - FP.screen.height / 2, 0, _grid.height - FP.screen.height); // FUCK OFF
 		}
 		
+		public function changeLevel(levelName:String, spawnTarget:int = -1):void
+		{
+			if (Assets[levelName] != null)
+			{
+				if (levelName == "LV_BASE")
+				{
+					switch(_tutorialState)
+					{
+						case 0:
+							//Small man
+							levelName = "LV_STRONG1";
+							spawnTarget = -1;
+							remove(_player);
+							_player = null;
+							break;
+						case 1:
+							// Strong man
+							remove(_player);
+							_player = null;
+							spawnTarget = -1;
+							levelName = "LV_JUMP1";
+							break;
+						case 2:
+							// Jump Man
+							break;
+						default:
+							// no man
+							break;
+					}
+					_tutorialState++
+				}
+				
+				// Load the level!
+				var tempLevel:Level = new Level(Assets[levelName]);
+				unloadLevel(_level);
+				_level = tempLevel;
+				loadLevel(_level,spawnTarget);
+			}
+		}
+		protected var _tutorialState:uint;
 		protected var _grid:Entity;
 		protected var _level:Level;
 		protected var _player:InputActor;
+		protected var _bgm:Sfx;
 		
 	}
 

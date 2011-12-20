@@ -1,6 +1,9 @@
 <level width="1728" height="960" foregroundArt="MAP_DEBUG" backgroundArt="none">
   <entities>
     <smallman x="256" y="640" />
+    <door x="96" y="576" targetMap="LV_SMALL1" targetID="1" objectID="1" />
+    <breakablestone x="0" y="224" />
+    <door x="320" y="352" targetMap="LV_BASE" targetID="0" objectID="2" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1728" h="96" />
