@@ -3,6 +3,8 @@ package worlds
 	import entities.Actor;
 	import entities.InputActor;
 	import entities.items.BreakableObject;
+	import entities.items.BreakablePot;
+	import entities.items.BreakableStone;
 	import entities.JumpMan;
 	import entities.SmallMan;
 	import entities.StrongMan;
@@ -40,7 +42,14 @@ package worlds
 			{
 				for each (var p:Point in _level.getEntities("breakablepot"))
 				{
-					add(new BreakableObject(p.x, p.y, Assets.GFX_POT, new Hitbox(64, 64,0,0)));
+					add(new BreakablePot(p.x, p.y));
+				}
+			}
+			if (_level.getEntities("breakablestone").length > 0)
+			{
+				for each (var p:Point in _level.getEntities("breakablestone"))
+				{
+					add(new BreakableStone(p.x, p.y));
 				}
 			}
 			

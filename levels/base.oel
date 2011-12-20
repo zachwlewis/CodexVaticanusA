@@ -9,6 +9,9 @@
     <breakablepot x="544" y="416" isBroken="False" />
     <breakablepot x="480" y="416" isBroken="False" />
     <breakablepot x="416" y="416" isBroken="False" />
+    <breakablestone x="992" y="352" />
+    <breakablestone x="1056" y="288" />
+    <breakablestone x="1120" y="256" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1728" h="32" />

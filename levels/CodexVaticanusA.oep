@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Codex Vaticanus A</Name>
-  <BackgroundColor A="255" R="50" G="55" B="67" />
-  <GridColor A="255" R="136" G="141" B="162" />
+  <BackgroundColor A="255" R="6" G="6" B="6" />
+  <GridColor A="255" R="147" G="147" B="110" />
   <LevelDefaultSize>
     <Width>1728</Width>
     <Height>960</Height>
@@ -48,7 +48,7 @@
         <X>1</X>
         <Y>1</Y>
       </ScrollFactor>
-      <Color A="255" R="152" G="159" B="175" />
+      <Color A="255" R="102" G="102" B="77" />
       <ExportMode>Rectangles</ExportMode>
     </LayerDefinition>
   </LayerDefinitions>
@@ -148,6 +148,21 @@
       <ValueDefinitions>
         <ValueDefinition xsi:type="BoolValueDefinition" Name="isBroken" Default="false" />
       </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
+    </EntityDefinition>
+    <EntityDefinition Name="breakablestone" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>64</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\editor\breakable_stone.png" Tiled="true">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
     </EntityDefinition>
   </EntityDefinitions>
