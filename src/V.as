@@ -9,7 +9,7 @@ package
 		
 		public function V() 
 		{
-			
+			public static var LevelData:Object;
 		}
 		
 	}

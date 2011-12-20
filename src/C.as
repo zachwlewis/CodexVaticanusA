@@ -24,7 +24,7 @@ package
 		/** Default coefficient of friction. */
 		public static const F_DEFAULT:Number = 0.4;
 		
-		public static const ENTRY_MAP:String = "LV_STRONG1";
+		public static const ENTRY_MAP:String = "LV_JUMP1";
 	}
 
 }

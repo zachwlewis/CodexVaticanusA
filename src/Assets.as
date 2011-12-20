@@ -18,6 +18,12 @@ package
 		[Embed(source='../levels/jump_tutorial_1.oel', mimeType='application/octet-stream')]
 		public static const LV_JUMP1:Class;
 		
+		[Embed(source = '../levels/map_jump1.png')]
+		public static const MAP_JUMP1:Class;
+		
+		[Embed(source = '../levels/map_jump1_bg.png')]
+		public static const BG_JUMP1:Class;
+		
 		[Embed(source='../levels/jump_tutorial_2.oel', mimeType='application/octet-stream')]
 		public static const LV_JUMP2:Class;
 		
@@ -32,6 +38,9 @@ package
 		
 		[Embed(source = '../levels/map_debug.png')]
 		public static const MAP_DEBUG:Class;
+		
+		[Embed(source = '../levels/bg_default.png')]
+		public static const BG_DEFAULT:Class;
 		
 		[Embed(source='../levels/base.oel', mimeType='application/octet-stream')]
 		public static const LV_BASE:Class;

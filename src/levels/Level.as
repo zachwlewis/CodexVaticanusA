@@ -3,6 +3,7 @@ package levels
 	import flash.display.BitmapData;
 	import flash.geom.Point;
 	import net.flashpunk.FP;
+	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.masks.Grid;
 	/**
@@ -17,6 +18,9 @@ package levels
 		{
 			xmlData = FP.getXML(map);
 		}
+		
+		public function get Width():uint { return uint(xmlData.@width); }
+		public function get Height():uint { return uint(xmlData.@height); }
 		
 		/**
 		 * Parses the map file for collision data and generates a grid.
@@ -51,6 +55,25 @@ package levels
 			}
 			
 			return fg;
+		}
+		
+		public function get Background():Image
+		{
+			var b:Image;
+			var c:Class = Assets[String(xmlData.@backgroundArt)];
+			if (c != null)
+			{
+				b = new Image(c);
+			}
+			else
+			{
+				b = new Image(Assets.BG_DEFAULT);
+			}
+			
+			b.scrollX = b.width/Width;
+			b.scrollY = Height / b.height;
+			
+			return b;
 		}
 		
 		public function get WellLit():Boolean

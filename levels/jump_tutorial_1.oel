@@ -1,4 +1,4 @@
-<level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
+<level width="2560" height="1856" foregroundArt="MAP_JUMP1" backgroundArt="BG_JUMP1" wellLit="False">
   <entities>
     <door x="2432" y="800" targetMap="LV_JUMP2" targetID="0" objectID="0" />
     <jumpman x="160" y="1696" />

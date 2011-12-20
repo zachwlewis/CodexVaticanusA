@@ -43,7 +43,7 @@ package worlds
 			_level = new Level(Assets[C.ENTRY_MAP]);
 			_bgm = new Sfx(Assets.BG_INTRO,switchSong);
 			_bgm.play();
-			_tutorialState = 2;
+			_tutorialState = 0;
 		}
 		
 		override public function begin():void 
@@ -84,6 +84,8 @@ package worlds
 			var o:XML;
 			_grid = new Entity(0, 0, loadTarget.Foreground, loadTarget.Collision);
 			_playerGlow.visible = !_level.WellLit;
+			addGraphic(_level.Background, 20);
+			
 			if (_player == null || _player.world != this)
 			{
 				if (loadTarget.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(loadTarget.getEntities("jumpman")[0].x, loadTarget.getEntities("jumpman")[0].y)))};
