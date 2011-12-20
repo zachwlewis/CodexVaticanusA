@@ -1,6 +1,6 @@
 <level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
   <entities>
-    <door x="2432" y="768" targetMap="LV_DEBUG" targetID="0" objectID="1" />
+    <door x="2432" y="768" targetMap="LV_TUTORIAL_END" targetID="0" objectID="1" />
     <door x="64" y="800" targetMap="LV_JUMP1" targetID="0" objectID="0" />
   </entities>
   <collision exportMode="Rectangles">
@@ -15,9 +15,13 @@
     <rect x="672" y="1568" w="128" h="288" />
     <rect x="800" y="1696" w="128" h="160" />
     <rect x="832" y="544" w="256" h="128" />
+    <rect x="896" y="1088" w="256" h="64" />
     <rect x="928" y="1824" w="1632" h="32" />
+    <rect x="992" y="1152" w="96" h="32" />
     <rect x="1088" y="288" w="640" h="192" />
     <rect x="1472" y="672" w="256" h="128" />
+    <rect x="1632" y="1088" w="96" h="32" />
+    <rect x="1664" y="1120" w="64" h="32" />
     <rect x="1920" y="32" w="640" h="480" />
     <rect x="1984" y="512" w="576" h="64" />
     <rect x="2048" y="576" w="512" h="64" />

@@ -1,7 +1,7 @@
 <level width="1728" height="960" foregroundArt="none" backgroundArt="none">
   <entities>
     <door x="128" y="800" targetMap="LV_STRONG1" targetID="0" objectID="1" />
-    <door x="1600" y="544" targetMap="LV_DEBUG" targetID="0" objectID="2" />
+    <door x="1568" y="544" targetMap="LV_TUTORIAL_END" targetID="2" objectID="2" />
     <breakablepot x="1376" y="416" isBroken="False" />
     <breakablepot x="1440" y="416" isBroken="False" />
     <breakablepot x="1376" y="480" isBroken="False" />
@@ -38,9 +38,11 @@
     <rect x="1376" y="224" w="352" h="64" />
     <rect x="1440" y="160" w="288" h="64" />
     <rect x="1504" y="96" w="224" h="64" />
-    <rect x="1504" y="416" w="224" h="128" />
+    <rect x="1504" y="416" w="224" h="96" />
+    <rect x="1504" y="512" w="32" h="32" />
     <rect x="1504" y="672" w="224" h="128" />
     <rect x="1568" y="32" w="160" h="64" />
+    <rect x="1664" y="512" w="64" h="32" />
     <rect x="1696" y="544" w="32" h="128" />
   </collision>
 </level>

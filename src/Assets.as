@@ -24,6 +24,12 @@ package
 		[Embed(source='../levels/strong_tutorial_1.oel', mimeType='application/octet-stream')]
 		public static const LV_STRONG1:Class;
 		
+		[Embed(source='../levels/strong_tutorial_2.oel', mimeType='application/octet-stream')]
+		public static const LV_STRONG2:Class;
+		
+		[Embed(source='../levels/tutorial_end.oel', mimeType='application/octet-stream')]
+		public static const LV_TUTORIAL_END:Class;
+		
 		[Embed(source = '../levels/map_debug.png')]
 		public static const MAP_DEBUG:Class;
 		
@@ -56,6 +62,9 @@ package
 		
 		[Embed(source = '../sfx/music.swf', symbol="world1")]
 		public static const BG_WORLD1:Class;
+		
+		[Embed(source = '../gfx/glow.png')]
+		public static const GFX_GLOW:Class;
 	}
 
 }

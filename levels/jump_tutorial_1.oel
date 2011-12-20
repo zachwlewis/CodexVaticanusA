@@ -1,6 +1,6 @@
 <level width="2560" height="1856" foregroundArt="none" backgroundArt="none">
   <entities>
-    <door x="2432" y="800" targetMap="" targetID="0" objectID="0" />
+    <door x="2432" y="800" targetMap="LV_JUMP2" targetID="0" objectID="0" />
     <jumpman x="160" y="1696" />
   </entities>
   <collision exportMode="Rectangles">

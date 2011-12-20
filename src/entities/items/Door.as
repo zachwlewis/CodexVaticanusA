@@ -14,9 +14,9 @@ package entities.items
 	public class Door extends Actor 
 	{
 		protected var _targetMap:String;
-		protected var _targetID:uint;
+		protected var _targetID:int;
 		
-		public function Door(x:Number, y:Number, targetMap:String, targetID:uint, objectID:uint) 
+		public function Door(x:Number, y:Number, targetMap:String, targetID:int, objectID:int) 
 		{
 			var graphic:Image = new Image(Assets.GFX_DOOR);
 			super(x, y, graphic, new Hitbox(64, 128));
@@ -26,10 +26,13 @@ package entities.items
 			_objectID = objectID;
 			_hasPhysics = false;
 			type = "door";
+			
+			//trace("Door", "ID:", _objectID, "->", _targetMap + "[" + _targetID + "]");
 		}
 		
 		public function useDoor():void
 		{
+			trace("Used Door", StageWorld(world).MapName + "[" + ObjectID + "]","->", _targetMap + "[" + _targetID + "]");
 			StageWorld(world).changeLevel(_targetMap, _targetID);
 		}
 		

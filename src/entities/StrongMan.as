@@ -105,6 +105,10 @@ package entities
 			
 			// Check for breakable objects.
 			var hits:Array = [];
+			if (_strikeZone == null || _strikeZone.world == null)
+			{
+				_strikeZone = this.world.add(new Entity(0, 0, null, new Hitbox(32, 64)));
+			}
 			_strikeZone.collideTypesInto(["breakable"], p.x, p.y, hits);
 			for each (var bo:BreakableObject in hits)
 			{
