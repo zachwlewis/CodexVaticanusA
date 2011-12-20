@@ -5,6 +5,7 @@ package worlds
 	import entities.items.BreakableObject;
 	import entities.items.BreakablePot;
 	import entities.items.BreakableStone;
+	import entities.items.Door;
 	import entities.JumpMan;
 	import entities.SmallMan;
 	import entities.StrongMan;
@@ -50,6 +51,14 @@ package worlds
 				for each (var p:Point in _level.getEntities("breakablestone"))
 				{
 					add(new BreakableStone(p.x, p.y));
+				}
+			}
+			
+			if (_level.getEntities("door").length > 0)
+			{
+				for each (var p:Point in _level.getEntities("door"))
+				{
+					add(new Door(p.x, p.y));
 				}
 			}
 			
