@@ -1,7 +1,6 @@
 <level width="1952" height="1216" foregroundArt="none" backgroundArt="none">
   <entities>
-    <smallman x="288" y="544" />
-    <door x="1824" y="480" targetMap="my butt" targetID="0" objectID="0" />
+    <door x="1824" y="480" targetMap="LV_GROUP2" targetID="0" objectID="1" />
     <breakablestone x="1664" y="544" />
     <breakablestone x="1600" y="544" />
     <breakablestone x="1600" y="480" />
@@ -14,7 +13,9 @@
     <breakablestone x="1472" y="544" />
     <breakablestone x="1472" y="480" />
     <breakablestone x="1472" y="416" />
-    <door x="64" y="480" targetMap="my other butt" targetID="0" objectID="0" />
+    <door x="64" y="480" targetMap="LV_DEBUG" targetID="1" objectID="0" />
+    <wallswitch x="1888" y="128" activated="False" targetID="1" />
+    <wallswitch x="1856" y="800" activated="False" targetID="1" />
   </entities>
   <collision exportMode="Rectangles">
     <rect x="0" y="0" w="1952" h="32" />

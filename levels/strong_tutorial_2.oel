@@ -1,8 +1,7 @@
 <level width="1728" height="960" foregroundArt="none" backgroundArt="none">
   <entities>
-    <strongman x="96" y="800" />
-    <door x="128" y="800" targetMap="strong_tutorial_1" targetID="0" objectID="1" />
-    <door x="1600" y="544" targetMap="" targetID="0" objectID="2" />
+    <door x="128" y="800" targetMap="LV_STRONG1" targetID="0" objectID="1" />
+    <door x="1600" y="544" targetMap="LV_DEBUG" targetID="0" objectID="2" />
     <breakablepot x="1376" y="416" isBroken="False" />
     <breakablepot x="1440" y="416" isBroken="False" />
     <breakablepot x="1376" y="480" isBroken="False" />
