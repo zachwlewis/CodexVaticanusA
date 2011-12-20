@@ -11,6 +11,7 @@ package worlds
 	import entities.StrongMan;
 	import flash.display.BitmapData;
 	import flash.display.InterpolationMethod;
+	import flash.display.MovieClip;
 	import flash.geom.Point;
 	import levels.Level;
 	import net.flashpunk.Entity;
@@ -22,8 +23,11 @@ package worlds
 	import net.flashpunk.Tween;
 	import net.flashpunk.tweens.motion.CircularMotion;
 	import net.flashpunk.tweens.motion.LinearMotion;
+	import net.flashpunk.utils.Input;
+	import net.flashpunk.utils.Key;
 	import net.flashpunk.World;
 	import net.flashpunk.tweens.misc.NumTween
+	import tools.DebugToolbar;
 	
 	/**
 	 * ...
@@ -129,6 +133,24 @@ package worlds
 			super.update();
 			centerCameraOnPlayer();
 			Image(_playerGlow.graphic).alpha = _glowTween.x;
+			debugInput();
+		}
+		
+		protected function debugInput():void
+		{
+			if (Input.pressed(Key.T) && Input.check(Key.CONTROL) && Input.check(Key.SHIFT))
+			{
+				if (_debug == null)
+				{
+					_debug = new DebugToolbar(this);
+					FP.stage.addChild(_debug);				
+				}
+				else
+				{
+					FP.stage.removeChild(_debug);
+					_debug = null;
+				}
+			}
 		}
 		
 		protected function centerCameraOnPlayer():void
@@ -181,6 +203,16 @@ package worlds
 				loadLevel(_level,spawnTarget);
 			}
 		}
+		
+		public function forceLevelLoad(mapData:Object):void
+		{
+			removeAll();
+			_player = null;
+			
+			_level = new Level(mapData);
+			loadLevel(_level);
+		}
+		
 		protected var _tutorialState:uint;
 		protected var _grid:Entity;
 		protected var _level:Level;
@@ -188,7 +220,7 @@ package worlds
 		protected var _playerGlow:Entity;
 		protected var _glowTween:CircularMotion;
 		protected var _bgm:Sfx;
-		
+		protected var _debug:DebugToolbar;
 	}
 
 }

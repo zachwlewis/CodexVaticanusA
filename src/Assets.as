@@ -75,6 +75,9 @@ package
 		[Embed(source = '../sfx/music.swf', symbol="world1")]
 		public static const BG_WORLD1:Class;
 		
+		[Embed(source = '../gfx/debug/debug.swf', symbol="toolbar")]
+		public static const DBG_TOOLBAR:Class;
+		
 		[Embed(source = '../gfx/glow.png')]
 		public static const GFX_GLOW:Class;
 	}

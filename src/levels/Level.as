@@ -14,9 +14,16 @@ package levels
 	{
 		private var xmlData:XML;
 		
-		public function Level(map:Class)
+		public function Level(map:Object)
 		{
-			xmlData = FP.getXML(map);
+			if (map is XML)
+			{
+				xmlData = XML(map);
+			}
+			else if (map is Class)
+			{
+				xmlData = FP.getXML(Class(map));
+			}
 		}
 		
 		public function get Width():uint { return uint(xmlData.@width); }
