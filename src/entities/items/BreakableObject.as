@@ -16,18 +16,17 @@ package entities.items
 		
 		protected var _sprite:Spritemap;
 		
-		public function BreakableObject(x:int, y:int, graphic:Class, hitbox:Hitbox) 
+		public function BreakableObject(x:Number, y:Number) 
 		{
-			_sprite = new Spritemap(graphic, 64, 64)
-			_sprite.add("break", [1, 2], 0.05, false);
-			super(x, y, _sprite, new Hitbox(hitbox.width,hitbox.height,hitbox.x, hitbox.y));
+			var hitbox:Hitbox = new Hitbox(64, 64);
 			type = "breakable";
-			_hasPhysics = false;
+			super(x, y, _sprite, hitbox);
 		}
 		
 		override public function TakeHit():void 
 		{
 			this.collidable = false;
+			layer = 10;
 			_sprite.play("break");
 			super.TakeHit();
 		}

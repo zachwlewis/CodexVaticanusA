@@ -103,16 +103,6 @@ package entities
 			_strikeZone.x = p.x;
 			_strikeZone.y = p.y;
 			
-			var myArray:Array = [];
-			world.getType("breakable", myArray);
-			for each (var o:Object in myArray)
-			{
-				if (o is Actor)
-				{
-					trace(Actor(o).name);
-				}
-			}
-			
 			// Check for breakable objects.
 			var hits:Array = [];
 			_strikeZone.collideTypesInto(["breakable"], p.x, p.y, hits);

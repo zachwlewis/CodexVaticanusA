@@ -3,6 +3,9 @@ package worlds
 	import entities.Actor;
 	import entities.InputActor;
 	import entities.items.BreakableObject;
+	import entities.items.BreakablePot;
+	import entities.items.BreakableStone;
+	import entities.items.Door;
 	import entities.JumpMan;
 	import entities.SmallMan;
 	import entities.StrongMan;
@@ -10,6 +13,7 @@ package worlds
 	import flash.geom.Point;
 	import levels.Level;
 	import net.flashpunk.Entity;
+	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.masks.Grid;
 	import net.flashpunk.masks.Hitbox;
@@ -33,20 +37,49 @@ package worlds
 		
 		override public function begin():void 
 		{			
+			var p:Point;
+			var o:XML;
 			if (_level.getEntities("jumpman").length > 0) { _player = JumpMan(add(new JumpMan(_level.getEntities("jumpman")[0].x, _level.getEntities("jumpman")[0].y)))};
 			if (_level.getEntities("smallman").length > 0) { _player = SmallMan(add(new SmallMan(_level.getEntities("smallman")[0].x, _level.getEntities("smallman")[0].y)))};
 			if (_level.getEntities("strongman").length > 0) { _player = StrongMan(add(new StrongMan(_level.getEntities("strongman")[0].x, _level.getEntities("strongman")[0].y)))};
 			if (_level.getEntities("breakablepot").length > 0)
 			{
-				for each (var p:Point in _level.getEntities("breakablepot"))
+				for each (p in _level.getEntities("breakablepot"))
 				{
-					add(new BreakableObject(p.x, p.y, Assets.GFX_POT, new Hitbox(64, 64,0,0)));
+					add(new BreakablePot(p.x, p.y));
+				}
+			}
+			if (_level.getEntities("breakablestone").length > 0)
+			{
+				for each (p in _level.getEntities("breakablestone"))
+				{
+					add(new BreakableStone(p.x, p.y));
+				}
+			}
+			
+			if (_level.getEntities("door").length > 0)
+			{
+				for each (o in _level.getEntitiesAsXML("door"))
+				{
+					add(new Door(Number(o.@x), Number(o.@y), o.@targetMap, uint(o.targetID), uint(o.objectID)));
 				}
 			}
 			
 			add(_grid);
 			
 			super.begin();
+		}
+		
+		override public function update():void 
+		{
+			super.update();
+			centerCameraOnPlayer();
+		}
+		
+		protected function centerCameraOnPlayer():void
+		{
+			FP.camera.x = FP.clamp(_player.x - FP.screen.width / 2, 0, _grid.width - FP.screen.width - 22);
+			FP.camera.y = FP.clamp(_player.y - FP.screen.height / 2, 0, _grid.height - FP.screen.height); // FUCK OFF
 		}
 		
 		protected var _grid:Entity;

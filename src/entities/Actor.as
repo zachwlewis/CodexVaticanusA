@@ -159,6 +159,7 @@ package entities
 		protected var _collision:Entity;
 		protected var _image:Image;
 		protected var _hasPhysics:Boolean;
+		protected var _objectID:uint;
 		
 		/** Horizontal acceleration of input. */
 		protected var _ah:Number = C.A_HORIZONTAL;

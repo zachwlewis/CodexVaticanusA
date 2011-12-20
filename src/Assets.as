@@ -44,6 +44,12 @@ package
 		
 		[Embed(source = '../gfx/items/breakable_pot.png')]
 		public static const GFX_POT:Class;
+		
+		[Embed(source = '../gfx/items/breakable_stone.png')]
+		public static const GFX_BREAKABLE_STONE:Class;
+		
+		[Embed(source = '../gfx/items/door.png')]
+		public static const GFX_DOOR:Class;
 	}
 
 }
