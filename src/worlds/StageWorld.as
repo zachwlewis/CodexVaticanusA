@@ -6,6 +6,7 @@ package worlds
 	import entities.items.BreakablePot;
 	import entities.items.BreakableStone;
 	import entities.items.Door;
+	import entities.items.SlidingDoor;
 	import entities.items.WallSwitch;
 	import entities.JumpMan;
 	import entities.SmallMan;
@@ -127,13 +128,16 @@ package worlds
 				}
 			}
 			
-			if (loadTarget.getEntities("switch").length > 0)
+			for each (o in loadTarget.getEntitiesAsXML("switch"))
 			{
-				for each (o in loadTarget.getEntitiesAsXML("switch"))
-				{
-					var s:WallSwitch = new WallSwitch(Number(o.@x), Number(o.@y));
-					add(s);
-				}
+				var s:WallSwitch = new WallSwitch(o);
+				add(s);
+			}
+			
+			for each (o in loadTarget.getEntitiesAsXML("slidingdoor"))
+			{
+				var sd:SlidingDoor = new SlidingDoor(o);
+				add(sd);
 			}
 			
 			add(_grid);

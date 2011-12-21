@@ -2,6 +2,7 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.net.SharedObject;
 	import net.flashpunk.Engine;
 	import net.flashpunk.FP;
 	import worlds.StageWorld;
@@ -18,8 +19,8 @@ package
 		{
 			super(1706, 960, 60, true);
 			FP.screen.color = 0x12120E;
-			V.LevelData = new Object();
-			//FP.screen.scale = 0.5;
+			V.Shared = SharedObject.getLocal("saves", null, false);
+			V.LevelData = V.Shared.data["LevelData"];
 		}
 
 		override public function init():void 

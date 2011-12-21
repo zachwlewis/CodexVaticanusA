@@ -258,9 +258,14 @@
       </ImageDefinition>
       <ValueDefinitions>
         <ValueDefinition xsi:type="IntValueDefinition" Name="objectID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
-        <ValueDefinition xsi:type="IntValueDefinition" Name="switchID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="triggerID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+        <ValueDefinition xsi:type="EnumValueDefinition" Name="triggerType">
+          <Elements>
+            <string>WallSwitch</string>
+          </Elements>
+        </ValueDefinition>
       </ValueDefinitions>
-      <NodesDefinition Enabled="true" Limit="2" DrawMode="Path" />
+      <NodesDefinition Enabled="true" Limit="1" DrawMode="Path" />
     </EntityDefinition>
   </EntityDefinitions>
 </project>

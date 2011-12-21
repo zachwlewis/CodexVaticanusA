@@ -92,6 +92,9 @@ package
 		
 		[Embed(source = '../levels/persistance2.oel', mimeType = 'application/octet-stream')]
 		public static const MAP_PERSISTANCE2:Class;
+		
+		[Embed(source = '../gfx/items/slide_door.png')]
+		public static const GFX_SLIDINGDOOR:Class;
 	}
 
 }

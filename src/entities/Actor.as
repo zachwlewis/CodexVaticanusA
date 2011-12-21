@@ -39,7 +39,7 @@ package entities
 			_hasPhysics = true;
 		}
 		
-		public function loadData():void
+		protected function loadData():void
 		{
 			var className:String = String(getClass());
 			className = className.slice(7, className.length - 1);
@@ -53,7 +53,7 @@ package entities
 			}
 		}
 		
-		public function saveData():void
+		protected function saveData(overwrite:Boolean = true):void
 		{
 			var className:String = String(getClass());
 			className = className.slice(7, className.length - 1);
@@ -63,17 +63,17 @@ package entities
 			
 			for each(var s:String in _props)
 			{
-				trace(mapName, className + _objectID, s, this[s]);
 				output[s] = this[s];
 				
 				
 			}
-			V.SetLevelData(mapName, className, _objectID, output);
+			V.SetLevelData(mapName, className, _objectID, output, overwrite);
 		}
 		
 		
 		override public function added():void 
 		{
+			saveData(false);
 			loadData();
 			if (StageWorld(world) != null)
 			{
@@ -137,7 +137,7 @@ package entities
 			{
 				// Handle x-collisions.
 				_s.x += _v.x;
-				if (collideTypes(["breakable",_collision.type], _s.x, _s.y))
+				if (collideTypes(["slidingdoor","breakable",_collision.type], _s.x, _s.y))
 				{
 					// Okay, that didn't work. Let's back up to the nearest grid position.
 					if (FP.sign(_v.x) > 0)
@@ -155,7 +155,7 @@ package entities
 				
 				// Handle y-collisions.
 				_s.y += _v.y;
-				if (collideTypes(["breakable",_collision.type], _s.x, _s.y))
+				if (collideTypes(["slidingdoor","breakable",_collision.type], _s.x, _s.y))
 				{
 					// Backup again.
 					if (FP.sign(_v.y) > 0)
