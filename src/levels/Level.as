@@ -5,6 +5,7 @@ package levels
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Backdrop;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.graphics.Tilemap;
 	import net.flashpunk.masks.Grid;
 	/**
 	 * ...
@@ -47,8 +48,21 @@ package levels
 			return g;
 		}
 		
+		public function get ForegroundTiles():Tilemap
+		{
+			var tm:Tilemap = new Tilemap(Assets.GFX_TILES, Width, Height, C.GS, C.GS);
+			tm.usePositions = false;
+			for each (var o:XML in xmlData.foreground.tile)
+			{
+				tm.setTile(uint(o.@x), uint(o.@y), uint(o.@tx) + 4 * uint(o.@ty));				
+			}
+			
+			return tm;
+		}
+		
 		public function get Foreground():Image
 		{
+			
 			var fg:Image;
 			if (String(xmlData.@foregroundArt) != "none")
 			{

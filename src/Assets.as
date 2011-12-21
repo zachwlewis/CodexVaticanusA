@@ -78,8 +78,11 @@ package
 		[Embed(source = '../gfx/debug/debug.swf', symbol="toolbar")]
 		public static const DBG_TOOLBAR:Class;
 		
-		[Embed(source = '../gfx/glow.png')]
+		[Embed(source='../gfx/glow.png')]
 		public static const GFX_GLOW:Class;
+		
+		[Embed(source = '../gfx/tilesets/tiles-a.png')]
+		public static const GFX_TILES:Class;
 	}
 
 }

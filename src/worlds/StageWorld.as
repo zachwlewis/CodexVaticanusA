@@ -86,7 +86,7 @@ package worlds
 		{
 			var p:Point;
 			var o:XML;
-			_grid = new Entity(0, 0, loadTarget.Foreground, loadTarget.Collision);
+			_grid = new Entity(0, 0, loadTarget.ForegroundTiles, loadTarget.Collision);
 			_playerGlow.visible = !_level.WellLit;
 			addGraphic(_level.Background, 20);
 			

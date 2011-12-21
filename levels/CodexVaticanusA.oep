@@ -12,8 +12,8 @@
     <Height>960</Height>
   </LevelMinimumSize>
   <LevelMaximumSize>
-    <Width>6824</Width>
-    <Height>6912</Height>
+    <Width>64000</Width>
+    <Height>64000</Height>
   </LevelMaximumSize>
   <Filename>C:\Users\Zachary\Documents\CodexVaticanusA\levels\CodexVaticanusA.oep</Filename>
   <AngleMode>Radians</AngleMode>
@@ -28,8 +28,8 @@
     <ValueDefinition xsi:type="BoolValueDefinition" Name="wellLit" Default="false" />
   </LevelValueDefinitions>
   <LayerDefinitions>
-    <LayerDefinition xsi:type="EntityLayerDefinition">
-      <Name>entities</Name>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>foreground</Name>
       <Grid>
         <Width>32</Width>
         <Height>32</Height>
@@ -38,6 +38,7 @@
         <X>1</X>
         <Y>1</Y>
       </ScrollFactor>
+      <ExportMode>XMLCoords</ExportMode>
     </LayerDefinition>
     <LayerDefinition xsi:type="GridLayerDefinition">
       <Name>collision</Name>
@@ -52,8 +53,29 @@
       <Color A="255" R="102" G="102" B="77" />
       <ExportMode>Rectangles</ExportMode>
     </LayerDefinition>
+    <LayerDefinition xsi:type="EntityLayerDefinition">
+      <Name>entities</Name>
+      <Grid>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+    </LayerDefinition>
   </LayerDefinitions>
-  <Tilesets />
+  <Tilesets>
+    <Tileset>
+      <Name>tilesa</Name>
+      <FilePath>..\gfx\tilesets\tiles-a.png</FilePath>
+      <TileSize>
+        <Width>32</Width>
+        <Height>32</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+  </Tilesets>
   <EntityDefinitions>
     <EntityDefinition Name="smallman" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
@@ -61,7 +83,7 @@
         <Height>64</Height>
       </Size>
       <Origin>
-        <X>128</X>
+        <X>0</X>
         <Y>0</Y>
       </Origin>
       <ImageDefinition DrawMode="Image" ImagePath="..\gfx\characters\smallman_animated.png" Tiled="true">
