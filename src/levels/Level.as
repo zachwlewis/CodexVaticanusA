@@ -60,6 +60,21 @@ package levels
 			return tm;
 		}
 		
+		public function get Name():String
+		{
+			var s:String;
+			if (xmlData.@name == null)
+			{
+				s = "none";
+				trace("WARNING: Map is unnamed.");
+			}
+			else
+			{
+				s = xmlData.@name;
+			}
+			return s;
+		}
+		
 		public function get Foreground():Image
 		{
 			

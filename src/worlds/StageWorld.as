@@ -6,6 +6,7 @@ package worlds
 	import entities.items.BreakablePot;
 	import entities.items.BreakableStone;
 	import entities.items.Door;
+	import entities.items.WallSwitch;
 	import entities.JumpMan;
 	import entities.SmallMan;
 	import entities.StrongMan;
@@ -38,6 +39,7 @@ package worlds
 		public function get CollisionGrid():Entity { return _grid; }
 		
 		public var MapName:String;
+		public function get InternalMapName():String { return _level.Name; }
 		
 		
 		public function StageWorld() 
@@ -122,6 +124,15 @@ package worlds
 						_player.Position.y = d.y + d.height - _player.height;
 					}
 					add(d);					
+				}
+			}
+			
+			if (loadTarget.getEntities("switch").length > 0)
+			{
+				for each (o in loadTarget.getEntitiesAsXML("switch"))
+				{
+					var s:WallSwitch = new WallSwitch(Number(o.@x), Number(o.@y));
+					add(s);
 				}
 			}
 			

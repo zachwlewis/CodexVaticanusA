@@ -28,6 +28,7 @@ package entities
 		public function set HasPhysics(value:Boolean):void { _hasPhysics = value; }
 		
 		public function get ObjectID():uint { return _objectID; }
+		public function set ObjectID(value:uint):void { _objectID = value; }
 		
 		public function Actor(x:Number=0, y:Number=0, graphic:Graphic=null, mask:Mask=null) 
 		{
@@ -38,8 +39,42 @@ package entities
 			_hasPhysics = true;
 		}
 		
+		public function loadData():void
+		{
+			var className:String = String(getClass());
+			className = className.slice(7, className.length - 1);
+			
+			var mapName:String = StageWorld(world).InternalMapName;
+			var data:Object = V.GetLevelData(mapName, className, _objectID);
+			
+			for each (var s:String in _props)
+			{
+				if(data[s] != null) this[s] = data[s];
+			}
+		}
+		
+		public function saveData():void
+		{
+			var className:String = String(getClass());
+			className = className.slice(7, className.length - 1);
+			
+			var mapName:String = StageWorld(world).InternalMapName;
+			var output:Object = { };
+			
+			for each(var s:String in _props)
+			{
+				trace(mapName, className + _objectID, s, this[s]);
+				output[s] = this[s];
+				
+				
+			}
+			V.SetLevelData(mapName, className, _objectID, output);
+		}
+		
+		
 		override public function added():void 
 		{
+			loadData();
 			if (StageWorld(world) != null)
 			{
 				_collision = StageWorld(world).CollisionGrid;
@@ -162,6 +197,7 @@ package entities
 		protected var _image:Image;
 		protected var _hasPhysics:Boolean;
 		protected var _objectID:uint;
+		protected var _props:Array;
 		
 		/** Horizontal acceleration of input. */
 		protected var _ah:Number = C.A_HORIZONTAL;

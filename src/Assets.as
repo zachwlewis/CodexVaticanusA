@@ -60,6 +60,9 @@ package
 		[Embed(source = '../gfx/characters/jumpman_animated.png')]
 		public static const GFX_ANI_JUMPMAN:Class;
 		
+		[Embed(source = '../gfx/items/slide_switch.png')]
+		public static const GFX_ANI_SWITCH:Class;
+		
 		[Embed(source = '../gfx/items/breakable_pot.png')]
 		public static const GFX_POT:Class;
 		
@@ -83,6 +86,12 @@ package
 		
 		[Embed(source = '../gfx/tilesets/tiles-a.png')]
 		public static const GFX_TILES:Class;
+		
+		[Embed(source = '../levels/persistance1.oel', mimeType = 'application/octet-stream')]
+		public static const MAP_PERSISTANCE1:Class;
+		
+		[Embed(source = '../levels/persistance2.oel', mimeType = 'application/octet-stream')]
+		public static const MAP_PERSISTANCE2:Class;
 	}
 
 }

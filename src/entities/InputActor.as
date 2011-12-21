@@ -1,6 +1,7 @@
 package entities 
 {
 	import entities.items.Door;
+	import entities.items.WallSwitch;
 	import net.flashpunk.Graphic;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.Mask;
@@ -47,6 +48,9 @@ package entities
 		{
 			var d:Door = Door(collide("door", x, y));
 			if (d != null) d.useDoor();
+			
+			var s:WallSwitch = WallSwitch(collide("switch", x, y));
+			if (s != null) s.useSwitch();
 		}
 		
 		protected function jump():void

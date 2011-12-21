@@ -18,12 +18,14 @@ package
 		{
 			super(1706, 960, 60, true);
 			FP.screen.color = 0x12120E;
+			V.LevelData = new Object();
 			//FP.screen.scale = 0.5;
 		}
 
 		override public function init():void 
 		{
 			trace("FP Started.");
+			
 			//FP.console.enable();
 			FP.world = new StageWorld();
 			super.init();

@@ -26,6 +26,7 @@
     <ValueDefinition xsi:type="StringValueDefinition" Name="foregroundArt" Default="none" MaxChars="-1" MultiLine="false" />
     <ValueDefinition xsi:type="StringValueDefinition" Name="backgroundArt" Default="none" MaxChars="-1" MultiLine="false" />
     <ValueDefinition xsi:type="BoolValueDefinition" Name="wellLit" Default="false" />
+    <ValueDefinition xsi:type="StringValueDefinition" Name="name" Default="" MaxChars="-1" MultiLine="false" />
   </LevelValueDefinitions>
   <LayerDefinitions>
     <LayerDefinition xsi:type="TileLayerDefinition">
@@ -224,6 +225,42 @@
         <ValueDefinition xsi:type="IntValueDefinition" Name="targetID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
+    </EntityDefinition>
+    <EntityDefinition Name="switch" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\items\slide_switch.png" Tiled="true">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="enabled" Default="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="objectID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" />
+    </EntityDefinition>
+    <EntityDefinition Name="slidingdoor" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>64</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\gfx\items\slide_door.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="objectID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="switchID" Default="0" Min="0" Max="2147483647" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="true" Limit="2" DrawMode="Path" />
     </EntityDefinition>
   </EntityDefinitions>
 </project>
